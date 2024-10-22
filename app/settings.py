@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&p5_xyw5&!8%77^y5oy^hq3$0!^%3=qkj--(piszbaov&$9dtv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.0.150']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['app/templates/' ],
+        'DIRS': ['app/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# PASTA PARA UPLOAD DE IMG 
+# PASTA PARA UPLOAD DE IMG
+# MEDIA_ROOT = BASE_DIR.joinpath('media')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
