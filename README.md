@@ -1,3 +1,5 @@
+<p align="center"><a href="https://docs.djangoproject.com/pt-br/5.1/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/django-original-icon-2048x874-iws4p6y8.png" width="200"></a></p>
+
 ## PROJETO DJANGO
 
 Django é um framework de web server-side escrito em Python, que é um projeto gratuito e de código aberto. Ele é uma ferramenta que ajuda a criar aplicações web de forma mais rápida e fácil, pois simplifica o processo de desenvolvimento.</br>
