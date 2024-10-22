@@ -1,6 +1,6 @@
 ## PROJETO DJANGO
 
-Django é um framework de web server-side escrito em Python, que é um projeto gratuito e de código aberto. Ele é uma ferramenta que ajuda a criar aplicações web de forma mais rápida e fácil, pois simplifica o processo de desenvolvimento. 
+Django é um framework de web server-side escrito em Python, que é um projeto gratuito e de código aberto. Ele é uma ferramenta que ajuda a criar aplicações web de forma mais rápida e fácil, pois simplifica o processo de desenvolvimento.</br>
 O Django é caracterizado por: 
     <p>. Promover o desenvolvimento rápido e um design limpo</p> 
     <p>. Oferecer ferramentas robustas e eficientes</p>  
