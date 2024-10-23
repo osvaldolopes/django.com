@@ -1,4 +1,4 @@
-#!/mnt/e1daaebf-f475-4d80-a50d-28f7478d3641/PROJETOS/python.com/venv/bin/python3
+#!/mnt/e1daaebf-f475-4d80-a50d-28f7478d3641/PROJETOS/django.com/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

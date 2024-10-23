@@ -36650,3 +36650,46 @@ Not Found: /cars/theme.js
 Not Found: /assets/js/color-modes.js
 [22/Oct/2024 01:03:40] "GET /cars/theme.js HTTP/1.1" 404 2887
 [22/Oct/2024 01:03:40] "GET /assets/js/color-modes.js HTTP/1.1" 404 2920
+Traceback (most recent call last):
+  File "/mnt/e1daaebf-f475-4d80-a50d-28f7478d3641/PROJETOS/django.com/manage.py", line 11, in main
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/e1daaebf-f475-4d80-a50d-28f7478d3641/PROJETOS/django.com/manage.py", line 22, in <module>
+    main()
+  File "/mnt/e1daaebf-f475-4d80-a50d-28f7478d3641/PROJETOS/django.com/manage.py", line 13, in main
+    raise ImportError(
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+Watching for file changes with StatReloader
+Error: That port is already in use.
+Watching for file changes with StatReloader
+Error: That port is already in use.
+Watching for file changes with StatReloader
+Not Found: /
+[22/Oct/2024 23:01:03] "GET / HTTP/1.1" 404 2830
+[22/Oct/2024 23:01:07] "GET /cars/ HTTP/1.1" 200 17970
+Not Found: /assets/js/color-modes.js
+[22/Oct/2024 23:01:07] "GET /assets/js/color-modes.js HTTP/1.1" 404 2920
+Not Found: /cars/theme.js
+[22/Oct/2024 23:01:07] "GET /cars/theme.js HTTP/1.1" 404 2887
+[22/Oct/2024 23:01:07,749] - Broken pipe from ('192.168.0.210', 50685)
+[22/Oct/2024 23:01:20] "GET /cars/?search=brasi HTTP/1.1" 200 14334
+Not Found: /assets/js/color-modes.js
+Not Found: /cars/theme.js
+[22/Oct/2024 23:01:20] "GET /assets/js/color-modes.js HTTP/1.1" 404 2920
+[22/Oct/2024 23:01:20] "GET /cars/theme.js HTTP/1.1" 404 2887
+[22/Oct/2024 23:01:24] "GET /new_car/ HTTP/1.1" 200 14783
+Not Found: /assets/js/color-modes.js
+[22/Oct/2024 23:01:24] "GET /assets/js/color-modes.js HTTP/1.1" 404 2920
+Not Found: /new_car/theme.js
+[22/Oct/2024 23:01:24] "GET /new_car/theme.js HTTP/1.1" 404 2896
+[22/Oct/2024 23:02:50] "POST /new_car/ HTTP/1.1" 302 0
+[22/Oct/2024 23:02:51] "GET /cars/ HTTP/1.1" 200 18872
+Not Found: /cars/theme.js
+Not Found: /assets/js/color-modes.js
+[22/Oct/2024 23:02:51] "GET /cars/theme.js HTTP/1.1" 404 2887
+[22/Oct/2024 23:02:51] "GET /assets/js/color-modes.js HTTP/1.1" 404 2920
+[22/Oct/2024 23:02:51] "GET /media/cars/qr-706-classic-147-8358.webp HTTP/1.1" 200 134282

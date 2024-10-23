@@ -13,4 +13,4 @@ Django é um framework de web server-side escrito em Python, que é um projeto g
 
 ## SOBRE
 
-Sistema criado em Django para cadastro de imagens de carros para uma pagina web.
+Sistema criado em Django para cadastro de imagens de carros para uma pagina web, os sistema foi criado pra apredizagem do framework django.
