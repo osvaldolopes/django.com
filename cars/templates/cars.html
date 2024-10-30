@@ -23,8 +23,25 @@
               <p class="card-text">{{ car.model }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <div class="modal fade" id="{% url 'car_detail' %}{{ car.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">                          
+                              <h5 class="modal-title" id="exampleModalLabel">{{ car.model }}</h5>                     
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <img src="{{ car.photo.url }}" class="img-fluid mb-3" alt="Descrição da imagem">
+                              <p>Esta é a descrição da imagem exibida no modal. Você pode colocar qualquer texto aqui para descrever a imagem ou fornecer informações adicionais.</p>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#{% url 'car_detail' %}{{ car.id }}">View</button>                  
+                  <a href="{% url 'car_detail' %}{{ car.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
                 <small class="text-body-secondary">9 mins</small>
               </div>

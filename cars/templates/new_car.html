@@ -1,12 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <form enctype="multipart/form-data" method="post" id="car_form" novalidate="">
-        {% csrf_token %}
-        <table>
-            {{ new_car_form.as_table }}
-        </table>          
-        <input type="submit" value="cadastrar" class="btn btn-primary">
+    <form enctype="multipart/form-data" method="POST" id="car_form" novalidate="">
+        {% csrf_token %}    
+            <div class="mb-3">
+                {{ form.model.errors }}
+                <label for="modelo" class="form-label">Modelo</label>
+                <input class="form-control" {{ form.model }}             
+            </div>
+            <div class="mb-3">
+                {{ form.brand.errors }}
+                <label for="marca" class="form-label">Marca</label>
+                <select class="form-control" {{ form.brand }}
+            </div>
+            <div class="mb-3">
+                {{ form.factory_year.errors }}
+                <label for="anoFabrica" class="form-label">Ano de Fabricação</label>
+                <input class="form-control" {{ form.factory_year }}
+            </div>
+            <div class="mb-3">
+                {{ form.model_year.errors }}
+                <label for="anoModelo" class="form-label">Ano do Modelo</label>
+                <input class="form-control" {{ form.model_year }}
+            </div>
+            <div class="mb-3">
+                {{ form.plate.errors }}
+                <label for="placa" class="form-label">Placa</label>
+                <input class="form-control" {{ form.plate }}
+            </div>
+            <div class="mb-3">
+                {{ form.value.errors }}
+                <label for="valor" class="form-label">Valor</label>
+                <input class="form-control" {{ form.value }}
+            </div>
+            <div class="mb-3">
+                {{ form.photo.errors }}
+                <label for="foto" class="form-label">Foto</label>
+                <input class="form-control" {{ form.photo }}
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>      
     </form>    
 </div>  
 {% endblock %}
