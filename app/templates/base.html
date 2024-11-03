@@ -21,6 +21,24 @@
 
       .text-content {
         font-size: 16px;
+      }   
+
+      div[vw] {      
+        top: 1.7rem !important;
+        right: 5.2rem !important;      
+        transform: translateY(-100%) !important;      
+        position: absolute !important;  
+      }      
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .image-attributes {
+        text-align: center;
       }
 
       form{
@@ -163,10 +181,25 @@
       </ul>
       <ul class="dropdown position-fixed bottom-0 end-0 mb-3 me-5 bd-mode-toggle">       
           <button class="btn btn-primary me-2" onclick="adjustFontSize(1)">+</button>
-          <button class="btn btn-secondary" onclick="adjustFontSize(-1)">-</button>    
-      </ul>
+          <button class="btn btn-secondary" onclick="adjustFontSize(-1)">-</button>   
+
+          <!-- Inicio Vlibras -->
+          <div vw class="enabled">
+              <div vw-access-button class="active"></div>
+              <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+              </div>       
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+              new window.VLibras.Widget('https://vlibras.gov.br/app');
+            </script>
+          </div>
+          <!-- Fim Vlibras -->
+
+      </ul>  
     </div>  
     <!-- Fim Toggle modo Tema -->
+
     
 <header data-bs-theme="dark">
   <div class="collapse text-bg-dark" id="navbarHeader">

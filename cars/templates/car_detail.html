@@ -1,28 +1,21 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-    <h2>Exemplo de Modal</h2>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Abrir Modal
-    </button>
+  <div class="text-center mb-3">
+    <h2>{{ object.model }}</h2>
+    <p>Esta é uma breve descrição da imagem que está centralizada na página.</p>
+  </div>
+  <div class="image-container">
+    <img src="{{ object.photo.url }}" class="img-fluid" alt="Descrição da imagem" />
+  </div>
+  <div class="image-attributes mt-3">
+    <p>Ano Fabricado: {{ object.factory_year }}</p>
+    <p>Ano Modelo: {{ object.model_year }}</p>
+    <p>Placa: {{ object.plate }}</p>
+    <p>Preço: R${{ object.value }}</p>
+    {% if user.is_authenticated %}
+      <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Atualizar</a>
+      <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
+    {% endif %}
+  </div>
+  {% endblock content %}
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="{{ object.photo.url }}" class="img-fluid mb-3" alt="Descrição da imagem">
-                <p>Esta é a descrição da imagem exibida no modal. Você pode colocar qualquer texto aqui para descrever a imagem ou fornecer informações adicionais.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock content %}

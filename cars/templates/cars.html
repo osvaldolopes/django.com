@@ -1,62 +1,83 @@
-{% extends "base.html" %} 
-  {% block content %}
-  <div class="album py-5 bg-body-tertiary">
+{% extends "base.html" %} {% block content %}
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <form method="GET" action="{% url 'cars_list' %}">
+      <div class="mb-3">
+        <label for="search" class="form-label">Buscar Carros</label>
+        <input type="text" class="form-control" name="search" />
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
 
-    <div class="container">
-    
-
-      <form method="GET" action="{% url 'cars_list' %}">
-        <div class="mb-3">
-          <label for="search" class="form-label">Buscar Carros</label>
-          <input type="text" class="form-control" name="search">
-        </div>
-        <button type="submit" class="btn btn-primary">Buscar</button>
-      </form>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% if cars %}
-        {% for car in cars %}
-        <div class="col">
-          <div class="card shadow-sm">       
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="{{ car.photo.url }}">
-            <div class="card-body">
-              <p class="card-text">{{ car.model }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                <div class="modal fade" id="{% url 'car_detail' %}{{ car.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% if cars %} {% for car in cars %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img
+            class="bd-placeholder-img card-img-top"
+            width="100%"
+            height="225"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            src="{{ car.photo.url }}"
+          />
+          <div class="card-body">
+            <p class="card-text">{{ car.model }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <div
+                  class="modal fade"
+                  id="{% url 'car_detail' car.pk %}"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
                   <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">                          
-                              <h5 class="modal-title" id="exampleModalLabel">{{ car.model }}</h5>                     
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                              <img src="{{ car.photo.url }}" class="img-fluid mb-3" alt="Descrição da imagem">
-                              <p>Esta é a descrição da imagem exibida no modal. Você pode colocar qualquer texto aqui para descrever a imagem ou fornecer informações adicionais.</p>
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                          </div>
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          {{ car.model }}
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
                       </div>
+                      <div class="modal-body">
+                        <img src="{{ car.photo.url }}" class="img-fluid mb-3" alt="Descrição da imagem"/>
+                        <p>
+                          Esta é a descrição da imagem exibida no modal. Você
+                          pode colocar qualquer texto aqui para descrever a
+                          imagem ou fornecer informações adicionais.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
                   </div>
-              </div>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#{% url 'car_detail' %}{{ car.id }}">View</button>                  
-                  <a href="{% url 'car_detail' %}{{ car.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#{% url 'car_detail' car.pk %}">View</button>
+                <a href="{% url 'car_detail' car.pk %}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                <a href="{% url 'car_update' car.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
               </div>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
-        {% endfor %}
-        {% else %}      
-        <div class="alert alert-danger" role="alert">
-          Ops. não existem carros com esse nome!!
-        </div>
-
-        {% endif %}
       </div>
-   
+      {% endfor %} {% else %}
+      <div class="alert alert-danger" role="alert">
+        Ops. não existem car com esse nome!!
+      </div>
+
+      {% endif %}
     </div>
   </div>
-  {% endblock %}
+</div>
+{% endblock %}

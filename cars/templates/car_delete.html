@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-3">
+    <h2>{{ object.model }}</h2>
+    <p>Deseja realmente deletar este item?.</p>
+  </div>
+  <div class="image-container">
+    <img src="{{ object.photo.url }}" class="img-fluid" alt="Descrição da imagem"/>
+  </div>
+  <div class="image-attributes mt-3">
+    <form method="POST" id="form" novalidate="">
+    {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Deletar</button>
+      <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+  {% endblock content %}
+</div>
