@@ -28,6 +28,7 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('cars/', CarsView.as_view(), name='cars_list'),
+    path('', CarsView.as_view(), name='cars_list'),
     path('new_car/', NewCarView.as_view(), name='new_car'),
     path('car_detail/<int:pk>/', CarDetailView.as_view(), name='car_detail'),    
     path('car_update/<int:pk>/update', CarUpdateView.as_view(), name='car_update'),
